@@ -1,0 +1,17 @@
+.app-card {
+  width: 400px;
+  display: inline-block;
+  margin: 15px;
+}
+
+.app-header-image {
+  background-image: url('../../../assets/img/logo.gif');
+  background-size: cover;
+}
+
+md-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
