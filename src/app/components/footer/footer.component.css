@@ -1,4 +1,4 @@
 md-toolbar {
   position: fixed;
-  bottom: 0;
+  bottom: -1px;
 }
