@@ -4,15 +4,31 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { BookComponent } from './components/book/book.component';
+import { BookListComponent } from './components/book-list/book-list.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { BasketComponent } from './components/basket/basket.component';
+import {MaterialModule} from "@angular/material";
+import { CommaSeparatorPipe } from './pipe/comma-separator.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BookComponent,
+    BookListComponent,
+    HeaderComponent,
+    FooterComponent,
+    SearchBarComponent,
+    BasketComponent,
+    CommaSeparatorPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MaterialModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
