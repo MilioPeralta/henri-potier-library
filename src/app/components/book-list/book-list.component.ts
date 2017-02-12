@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {BooksService} from "../../services/books.service";
+import {BooksService} from "../../services/books/books.service";
 import {Book} from "../../classes/book";
 import {Observable} from "rxjs";
 
@@ -11,7 +11,6 @@ import {Observable} from "rxjs";
 })
 export class BookListComponent implements OnInit {
   private books: Observable<Book[]>;
-  private errorMessage: string;
 
   constructor(private booksService: BooksService) {
   }
