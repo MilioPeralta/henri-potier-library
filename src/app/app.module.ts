@@ -11,6 +11,29 @@ import {FooterComponent} from './components/footer/footer.component';
 import {SearchBarComponent} from './components/search-bar/search-bar.component';
 import {BasketComponent} from './components/basket/basket.component';
 import {MaterialModule} from "@angular/material";
+import {BasketService} from "./services/basket/basket.service";
+import {RouterModule, Routes} from "@angular/router";
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+
+const appRoutes: Routes = [
+  {
+    path: 'list',
+    component: BookListComponent
+  },
+  {
+    path: 'basket',
+    component: BasketComponent
+  },
+  {
+    path: '',
+    redirectTo: '/list',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -20,15 +43,17 @@ import {MaterialModule} from "@angular/material";
     HeaderComponent,
     FooterComponent,
     SearchBarComponent,
-    BasketComponent
+    BasketComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [BasketService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
