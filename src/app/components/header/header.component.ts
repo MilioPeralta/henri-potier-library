@@ -4,12 +4,11 @@ import {BasketService} from "../../services/basket/basket.service";
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
-  providers: [BasketService]
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private basketService: BasketService) {
+  constructor(public basketService: BasketService) {
   }
 
   ngOnInit() {

@@ -5,13 +5,14 @@ import {BasketService} from "../../services/basket/basket.service";
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
-  styleUrls: ['./book.component.css'],
-  providers: [BasketService]
+  styleUrls: ['./book.component.css']
 })
 export class BookComponent implements OnInit {
 
   @Input()
   book: Book;
+
+  public synopsisVisible: boolean = false;
 
   ngOnInit() {
   }
@@ -21,6 +22,14 @@ export class BookComponent implements OnInit {
 
   addToShoppingCart() {
     this.basketService.add(this.book);
+  }
+
+  showSynopsis() {
+    this.synopsisVisible = true;
+  }
+
+  hideSynopsis() {
+    this.synopsisVisible = false;
   }
 
 }
