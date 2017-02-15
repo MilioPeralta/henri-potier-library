@@ -15,3 +15,8 @@ md-card-actions {
   justify-content: space-around;
   padding-bottom: 10px;
 }
+
+.link {
+  cursor: pointer;
+  text-decoration: underline;
+}
