@@ -1,3 +1,8 @@
 .example-icon {
   padding: 0 14px;
 }
+
+a, a:focus, a:visited, a:hover {
+  color: inherit;
+  text-decoration: none;
+}
