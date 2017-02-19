@@ -7,8 +7,9 @@
             <md-icon md-list-avatar>book</md-icon>
             <img [src]="book.cover" height="50" width="34">
             <h4 md-line>{{book.title}}</h4>
-            <h4 md-line>{{book.quantity}}</h4>
+            <h4 md-line>Quantity: {{book.quantity}}</h4>
             <p md-line> {{(book.quantity*book.price) | currency:'USD':true}} </p>
+              <md-icon class="icon" (click)="basketService.delete(book.isbn)">delete</md-icon>
             <md-divider></md-divider>
           </md-list-item>
           <md-divider></md-divider>

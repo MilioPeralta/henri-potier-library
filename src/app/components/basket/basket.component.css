@@ -5,3 +5,7 @@
 .empty, .total {
   margin-top: 30px;
 }
+
+.icon {
+  cursor: pointer;
+}

@@ -72,6 +72,17 @@ export class BasketService {
   }
 
   /**
+   * Deletes the given book with ghe given isbn from the basket
+   * @param isbn
+   */
+  delete(isbn: string) {
+    const index = this.find(isbn);
+    if (index !== null) {
+      this.remove(index);
+    }
+  }
+
+  /**
    * Removes the book at the given index
    * @param index
    */
