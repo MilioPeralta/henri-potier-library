@@ -1,23 +1,42 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <md-list>
-        <h3 md-subheader>Folders</h3>
-        <md-list-item *ngFor="let book of basketService.get()">
-          <md-icon md-list-avatar>book</md-icon>
-          <img md-card-image [src]="book.cover" height="50">
-          <h4 md-line>{{book.title}}</h4>
-          <h4 md-line>{{book.quantity}}</h4>
-          <p md-line> {{(book.quantity*book.price) | currency:'USD':true}} </p>
+  <div *ngIf="basketService.count() > 0">
+    <div class="row">
+      <div class="col-xs-offset-3 col-xs-6">
+        <md-list>
+          <md-list-item *ngFor="let book of basketService.get()">
+            <md-icon md-list-avatar>book</md-icon>
+            <img [src]="book.cover" height="50" width="34">
+            <h4 md-line>{{book.title}}</h4>
+            <h4 md-line>{{book.quantity}}</h4>
+            <p md-line> {{(book.quantity*book.price) | currency:'USD':true}} </p>
+            <md-divider></md-divider>
+          </md-list-item>
           <md-divider></md-divider>
-        </md-list-item>
-        <md-divider></md-divider>
-      </md-list>
+        </md-list>
+      </div>
     </div>
 
-    <div class="col-xs-6 col-xs-offset-6">
-      {{basketService.getTotal() | currency:'USD':true}}
-      {{basketService.getTotalWithOffers() | currency:'USD':true}}
+    <div class="row total">
+      <div class="col-xs-3 col-xs-offset-3">Total price</div>
+      <div class="col-xs-3">
+        {{basketService.getTotal() | currency:'USD':true}}
+      </div>
+    </div>
+
+    <div class="row total">
+      <div class="col-xs-3 col-xs-offset-3"><b>Total price with special discount</b></div>
+      <div class="col-xs-3">
+        <b>
+          {{basketService.getTotalWithOffers() | currency:'USD':true}}
+        </b>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="basketService.count() === 0">
+    <div class="empty col-xs-offset-3 col-xs-6">
+      <md-icon class="example-icon">shopping_basket</md-icon>
+      Your basket is empty, go on and visit the <a routerLink="/" routerLinkActive="active">shop</a> !
     </div>
   </div>
 </div>
