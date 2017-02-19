@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, Input} from "@angular/core";
 import {Book} from "../../classes/book";
 import {BasketService} from "../../services/basket/basket.service";
 
@@ -7,15 +7,16 @@ import {BasketService} from "../../services/basket/basket.service";
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.css']
 })
-export class BookComponent implements OnInit {
+export class BookComponent {
 
   @Input()
   book: Book;
 
+  /**
+   * Flag to hide/show the synopsis of a given book
+   * @type {boolean}
+   */
   public synopsisVisible: boolean = false;
-
-  ngOnInit() {
-  }
 
   constructor(private basketService: BasketService) {
   }

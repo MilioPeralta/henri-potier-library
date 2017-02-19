@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from "@angular/core";
 import {BasketService} from "../../services/basket/basket.service";
 
 @Component({
@@ -6,12 +6,9 @@ import {BasketService} from "../../services/basket/basket.service";
   templateUrl: './basket.component.html',
   styleUrls: ['./basket.component.css']
 })
-export class BasketComponent implements OnInit {
+export class BasketComponent {
 
   constructor(private basketService: BasketService) {
-  }
-
-  ngOnInit() {
   }
 
 }

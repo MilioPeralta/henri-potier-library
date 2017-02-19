@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 import {Observable} from "rxjs";
 import {Book} from "../../classes/book";
@@ -11,6 +11,10 @@ export class BooksService {
   constructor(private http: Http) {
   }
 
+  /**
+   * Fetch the book list
+   * @returns {Observable<R>}
+   */
   getBooks(): Observable<Book[]> {
     return this.http.get(this.booksUrl)
       .map(res => res.json() || [])

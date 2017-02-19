@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {BooksService} from "../../services/books/books.service";
 import {Book} from "../../classes/book";
 import {Observable} from "rxjs";
@@ -19,6 +19,9 @@ export class BookListComponent implements OnInit {
     this.getBooks()
   }
 
+  /**
+   * Fetch the list of books
+   */
   getBooks() {
     this.books = this.booksService.getBooks();
   }
