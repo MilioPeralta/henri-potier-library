@@ -55,7 +55,7 @@ export class BasketService {
    * @param book
    */
   add(book: Book) {
-    let index = this.find(book.isbn)
+    let index = this.find(book.isbn);
     if (index === null) {
       book.quantity = 1;
       this.books.push(book);
@@ -79,7 +79,7 @@ export class BasketService {
     this.books = [
       ...this.books.slice(0, index),
       ...this.books.slice(index + 1, this.books.length)
-    ]
+    ];
 
     this.commercialOffers = this.getCommercialOffers();
   }
@@ -180,12 +180,12 @@ export class BasketService {
   find(isbn: string) {
     let index = null;
     this.books.some((book, i) => {
-      let found = book.isbn === isbn
+      let found = book.isbn === isbn;
       if (found) {
         index = i;
       }
       return found;
-    })
+    });
 
     return index;
   }

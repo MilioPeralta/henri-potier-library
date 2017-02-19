@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from "@angular/core";
+import {BooksService} from "../../services/books/books.service";
 
 @Component({
   selector: 'app-search-bar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(public booksService: BooksService) {
+  }
 
   ngOnInit() {
+  }
+
+  setFilterText(value) {
+    this.booksService.setFilterText(value);
   }
 
 }

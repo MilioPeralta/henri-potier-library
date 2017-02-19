@@ -1,6 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs" *ngFor="let book of books | async">
+    <div class="col-xs-offset-3 col-xs-6">
+      <app-search-bar></app-search-bar>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs" *ngFor="let book of booksService.getBooks()">
       <app-book [book]="book"></app-book>
     </div>
   </div>
